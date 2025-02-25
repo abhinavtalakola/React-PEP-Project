@@ -16,9 +16,14 @@
     font-size: max(1vw, 14px);  /* Increase font size */
 }
 
+/* Updated: Make title, price, quantity, total white */
+.cart-items-title p, 
+.cart-items-item p {
+    color: white;  /* Set text color to white */
+}
+
 .cart-items-item {
     margin: 15px 0px;  /* Increase the margin between items */
-    color: black;  /* Keep item color black for contrast */
 }
 
 .cart-items-item img {
@@ -50,10 +55,10 @@
     gap: 30px;  /* Increase gap between total items */
 }
 
-.cart-total-details {
-    display: flex;
-    justify-content: space-between;
-    color: #b58c4f;  /* Golden text color */
+/* Updated: Make subtotal, delivery fee, and total white */
+.cart-total-details p, 
+.cart-total-details b {
+    color: white;  /* Set cart total details to white */
 }
 
 .cart-total hr {
