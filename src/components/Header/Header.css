@@ -1,0 +1,159 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('./header_img.png') no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 25px;
+    box-shadow: 
+        0px 4px 8px rgba(0, 0, 0, 0.1),
+        0px 8px 16px rgba(0, 0, 0, 0.1),
+        0px 12px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInHeader 1.5s ease-out;
+}
+
+.header:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0px 6px 12px rgba(0, 0, 0, 0.15),
+        0px 12px 24px rgba(0, 0, 0, 0.15),
+        0px 18px 36px rgba(0, 0, 0, 0.2); 
+}
+
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeInContents 1.5s ease-out; /* Smooth entry for contents */
+    color: #FFD700; /* Golden text color for content */
+    opacity: 0;
+    animation-delay: 0.5s; /* Delay to ensure it appears after the background */
+    animation-fill-mode: forwards; /* Ensure content stays visible after animation */
+}
+
+/* Heading (h2) */
+.header-contents h2 {
+    font-weight: 500;
+    color: #FFD700; /* Golden color for heading */
+    font-size: max(4.5vw, 22px);
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 1s; /* Delay to fade in after content */
+    animation-fill-mode: forwards; /* Keep the text visible after the animation */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding subtle text shadow */
+}
+
+/* Paragraph (p) */
+.header-contents p {
+    color: #FFD700; /* Golden color for paragraph text */
+    font-size: 1.2vw;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 1.2s; /* Delay to fade in after heading */
+    animation-fill-mode: forwards; /* Ensure the paragraph stays visible */
+    line-height: 1.5; /* Improved readability */
+    max-width: 600px; /* Limiting width for better control */
+}
+
+/* Button Style */
+.header-contents button {
+    border: none;
+    color: #FFD700; /* Golden text color for button */
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: #1e1e1e; /* Dark background for button */
+    font-size: max(1vw, 13px);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out; /* Smooth hover transition */
+    transform: scale(1);
+    opacity: 0;
+    animation: buttonPopIn 0.8s ease-out forwards;
+    animation-delay: 1.5s; /* Delay to allow text and paragraph to appear first */
+    animation-fill-mode: forwards; /* Ensure button remains visible */
+}
+
+.header-contents button:hover {
+    background-color: #FFD700; /* Golden background on hover */
+    color: #1e1e1e; /* Dark text on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+/* Keyframe Animations */
+
+/* Header fade-in animation */
+@keyframes fadeInHeader {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Content fade-in animation */
+@keyframes fadeInContents {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Smooth slide-up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Text fade-in animation */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Button pop-in animation */
+@keyframes buttonPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 850px) {
+    .header-contents {
+        max-width: 55%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 65%;
+        left: 5vw; /* Adjust for smaller screen sizes */
+    }
+    .header-contents p {
+        display: none; /* Hide paragraph for smaller screens */
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}

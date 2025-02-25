@@ -1,0 +1,148 @@
+/* Explore Menu Styles */
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: fadeInExploreMenu 1.5s ease-out;
+}
+
+/* Heading Styling */
+.explore-menu h1 {
+    color: #262626;
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 0.3s; /* Delay for heading */
+}
+
+/* Text Description Styling */
+.explore-menu-text {
+    max-width: 60%;
+    color: #808080;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Delay for paragraph */
+}
+
+/* Menu List Styling */
+.explore-menu-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+    animation: slideInList 1.5s ease-out forwards;
+    animation-delay: 0.7s; /* Delay for list */
+}
+
+/* Hiding scrollbar in the list */
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual List Item Styling */
+.explore-menu-list-item img {
+    width: 7.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Added smooth transition for shadow */
+    opacity: 0;
+    animation: fadeInItem 1.5s ease-out forwards;
+    animation-delay: 1s; /* Delay for item */
+}
+
+/* Hover effect on image */
+.explore-menu-list-item img:hover {
+    transform: scale(1.1); /* Zoom effect */
+    filter: brightness(1.2); /* Slight brightness increase */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Added a subtle shadow for depth */
+}
+
+/* Text inside each list item */
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: #747474;
+    font-size: max(1.4vw, 16px);
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInItem 1.5s ease-out forwards;
+    animation-delay: 1.2s; /* Delay for text */
+}
+
+/* HR styling for separating sections */
+.explore-menu hr {
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #e2e2e2;
+    border: none;
+}
+
+/* Active state styling for the menu items */
+.explore-menu-list-item .active {
+    border: 4px solid #FFD700;
+    padding: 2px;
+}
+
+/* Keyframe Animations */
+
+/* Fade-in effect for the explore menu */
+@keyframes fadeInExploreMenu {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slide-up effect */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in effect for heading and text */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in effect for the list of items */
+@keyframes slideInList {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Start from the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in effect for list item images and text */
+@keyframes fadeInItem {
+    from {
+        opacity: 0;
+        transform: translateY(10px); /* Slight movement upwards */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles for smaller screens */
+@media (max-width: 1050px) {
+    .explore-menu-text {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    .explore-menu-list {
+        justify-content: center; /* Center the items for small screens */
+        gap: 20px;
+    }
+}

@@ -1,0 +1,115 @@
+.cart {
+    margin: 50px auto;  /* Adjust the margin for spacing around the box */
+    background-color: rgba(0, 0, 0, 0.7);  /* Transparent black background (70% opacity) */
+    border-radius: 25px;  /* Rounded corners */
+    padding: 30px;  /* Add padding inside the box */
+    width: 80%;  /* Increase the width to 80% of the container */
+    max-width: 1200px;  /* Set a max-width for larger screens */
+    border: 3px solid #b58c4f;  /* Golden border */
+}
+
+.cart-items-title {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    color: gold;  /* Change text color to gold */
+    font-size: max(1vw, 14px);  /* Increase font size */
+}
+
+.cart-items-item {
+    margin: 15px 0px;  /* Increase the margin between items */
+    color: black;  /* Keep item color black for contrast */
+}
+
+.cart-items-item img {
+    width: 60px;  /* Increase the image size */
+}
+
+.cart hr {
+    height: 2px;  /* Make the hr line thicker */
+    background-color: #b58c4f;  /* Golden hr line */
+    border: none;
+}
+
+.cart-items-item .cross {
+    cursor: pointer;
+    color: gold;  /* Make the cross icon gold */
+}
+
+.cart-bottom {
+    margin-top: 100px;  /* Increase the space between cart items and bottom */
+    display: flex;
+    justify-content: space-between;
+    gap: max(12vw, 25px);  /* Increase gap between elements */
+}
+
+.cart-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;  /* Increase gap between total items */
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    color: #b58c4f;  /* Golden text color */
+}
+
+.cart-total hr {
+    margin: 15px 0px;
+    background-color: #b58c4f;  /* Golden line */
+}
+
+.cart-total button {
+    border: none;
+    color: black;  /* Text color inside button */
+    background-color: gold;  /* Button background color gold */
+    width: max(15vw, 250px);  /* Increase button width */
+    padding: 15px 0px;  /* Increase padding for larger button */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.cart-promocode {
+    flex: 1;
+}
+
+.cart-promocode p {
+    color: #b58c4f;  /* Golden text for promo */
+}
+
+.cart-promocode-input {
+    margin-top: 15px;  /* Increase top margin */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaeaea;  /* Light background for promo input */
+    border-radius: 4px;
+}
+
+.cart-promocode-input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 12px;  /* Increase input padding */
+    color: black;  /* Black text for input */
+}
+
+.cart-promocode-input button {
+    width: max(12vw, 175px);  /* Increase button width */
+    padding: 15px 6px;  /* Increase padding */
+    background-color: black;  /* Black background for promo button */
+    border: none;
+    color: gold;  /* Golden text on promo button */
+    border-radius: 4px;
+}
+
+@media (max-width: 750px) {
+    .cart-bottom {
+        flex-direction: column-reverse;
+    }
+    .cart-promocode {
+        justify-content: start;
+    }
+}
